@@ -27,10 +27,10 @@ const BrowseRange: FC<BrowseRangeProps> = () => {
   return (
     <div className="pt-20 pb-10">
       <div className="text-center">
-        <div className="text-3xl font-bold text-primary_text">
+        <div className="text-4xl font-bold text-primary_text">
           Browse The Range
         </div>
-        <div className="text-secondary_text_foregound">
+        <div className="text-secondary_text_foregound text-lg">
           Explore the Range: Unveiling our latest collection.{" "}
         </div>
       </div>
@@ -47,7 +47,7 @@ const BrowseRange: FC<BrowseRangeProps> = () => {
                 <div className="p-1">
                   <Card className="border-none shadow-none">
                       <img src={item.image} alt="" className="w-full h-[480px] object-cover rounded-lg"/>
-                      <div className="text-center text-primary_text text-xl font-bold mt-6">{item.title}</div>
+                      <div className="text-center text-primary_text text-2xl font-bold mt-6">{item.title}</div>
                   </Card>
                 </div>
               </CarouselItem>
