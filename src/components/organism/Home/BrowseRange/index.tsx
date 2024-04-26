@@ -34,7 +34,7 @@ const BrowseRange: FC<BrowseRangeProps> = () => {
           Explore the Range: Unveiling our latest collection.{" "}
         </div>
       </div>
-      <div className="px-36 w-full pt-10">
+      <div className="px-28 w-full pt-10">
         <Carousel
           opts={{
             align: "start",

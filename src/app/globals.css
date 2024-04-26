@@ -12,5 +12,56 @@
     --primary-text-foreground: #333333;
     --secondary-text: #898989;
     --secondary-text-foreground: #b0b0b0;
+    --bold-text: #475569;
   }
 }
+
+.scrolling::-webkit-scrollbar {
+  width: 0px; /* Lebar scrollbar */
+}
+
+.scrolling::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Warna latar belakang scrollbar */
+}
+
+.scrolling::-webkit-scrollbar-thumb {
+  background-color: #d6d6d6; /* Warna thumb scrollbar */
+  border-radius: 5px; /* Sudut border thumb */
+}
+
+.scrolling::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Warna thumb scrollbar saat hover */
+}
+
+/* .side::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  margin-top: -31px;
+  transform: rotate(90deg) scale(1.04);
+  background-image: url('/images/side.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+.side::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  margin-top: 52px;
+  transform: scale(1.04);
+  background-image: url('/images/side.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+} */
+

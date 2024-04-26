@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useRouter } from "next/navigation";
 import React, { FC, useState } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import { IoMdShare } from "react-icons/io";
@@ -13,12 +14,14 @@ interface ProductsProps {
 
 const Products: FC<ProductsProps> = ({ item, type }) => {
   const [isHover, setIsHover] = useState<boolean>();
+  const router = useRouter()
 
   return (
     <Card
       className="bg-[#F4F5F7] border-none shadow-none rounded-sm relative"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
+      onClick={() => router.push('/meja-keren')}
     >
       <img
         src={item}

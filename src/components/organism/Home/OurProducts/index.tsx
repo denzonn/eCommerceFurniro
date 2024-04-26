@@ -42,7 +42,7 @@ const data = [
 
 const OurProducts: FC<OurProductsProps> = () => {
   return (
-    <div className="py-10 px-32">
+    <div className="py-10 px-24">
       <div className="text-center text-primary_text text-4xl font-bold">
         Our Products
       </div>

@@ -4,7 +4,7 @@ interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => {
   return (
-    <div className="border-t-2 w-full px-32 py-16">
+    <div className="border-t-2 w-full px-24 py-16">
       <div className="grid grid-cols-3 gap-4 text-secondary font-semibold">
         <div>
           <img src="/images/logoName.png" alt="" className="h-4" />

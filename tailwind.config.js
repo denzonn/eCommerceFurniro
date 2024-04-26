@@ -15,6 +15,8 @@ module.exports = {
         primary_text_foregound: 'var(--primary-text-foreground)',
         secondary_text: 'var(--secondary-text)',
         secondary_text_foregound: 'var(--secondary-text-foreground)',
+        bold_text: 'var(--bold_text)',
+        admin: '#F1F5F9'
       },
     },
   },
