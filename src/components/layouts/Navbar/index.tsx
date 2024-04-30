@@ -2,11 +2,12 @@
 import React, { FC, useState } from "react";
 import { IoBagCheckOutline, IoCartOutline, IoSearch } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { MdCancel } from "react-icons/md";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { signIn } from "next-auth/react";
 
 interface NavbarProps {}
 
@@ -14,6 +15,7 @@ const Navbar: FC<NavbarProps> = () => {
   const pathname = usePathname();
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isInputOpen, setIsInputOpen] = useState(false);
+  const router = useRouter()
 
   return (
     <nav className="h-20 w-full bg-white flex flex-row items-center justify-between px-12">
@@ -62,6 +64,16 @@ const Navbar: FC<NavbarProps> = () => {
             >
               Contact
             </a>
+          </li>
+          <li>
+            <div
+              onClick={() => signIn()}
+              className={`${
+                pathname === "/contact" ? "text-primary font-semibold" : ""
+              } hover:text-primary hover:font-semibold font-medium`}
+            >
+              Login
+            </div>
           </li>
         </ul>
       </div>

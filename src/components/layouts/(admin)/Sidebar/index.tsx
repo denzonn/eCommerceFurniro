@@ -12,6 +12,7 @@ interface SidebarProps {}
 
 const Sidebar: FC<SidebarProps> = () => {
   const [isCategoryOpen, setCategoryIsOpen] = useState(false);
+  const [isProductOpen, setProductIsOpen] = useState(false);
   const pathname = usePathname();
 
   return (
@@ -75,15 +76,50 @@ const Sidebar: FC<SidebarProps> = () => {
               </ul>
             </div>
           </div>
-          <a
-            href="/admin/product"
-            className={`flex flex-row gap-2 items-center py-4 pl-4 rounded-l-full relative ${
-              pathname === "/admin/product" || pathname === "/admin/add-product" ? "bg-admin text-primary" : ""
-            }`}
-          >
-            <FiShoppingBag />
-            <li className="text-sm">Product</li>
-          </a>
+          <div>
+            <div
+              className={`flex flex-row gap-2 items-center py-4 pl-4 hover:cursor-pointer rounded-l-full ${
+                pathname === "/admin/product-type" || pathname === "/admin/product" || pathname === "/admin/add-product" ? "bg-admin text-primary" : ""
+              }`}
+              onClick={() => setProductIsOpen(!isProductOpen)}
+            >
+              <FiShoppingBag />
+              <li className="text-sm flex flex-row justify-between items-center w-full">
+                <div className="text-sm">Product</div>
+                <div className="pr-6">
+                  <MdKeyboardArrowDown
+                    className={
+                      isProductOpen ? "rotate-180" : "transition duration-500"
+                    }
+                  />
+                </div>
+              </li>
+            </div>
+            <div
+              className={`${
+                isProductOpen
+                  ? "max-h-[1000px] transition-all duration-700 ease-in-out"
+                  : "max-h-0 overflow-hidden"
+              } bg-[#a8822a] mr-4 rounded-xl`}
+            >
+              <ul className="flex flex-col space-y-2 delay-300">
+                <a
+                  href="/admin/product-type"
+                  className="flex flex-row gap-2 items-center py-4 pl-4"
+                >
+                  <IoPulseOutline />
+                  <li className="text-sm">Product Type</li>
+                </a>
+                <a
+                  href="/admin/product"
+                  className="flex flex-row gap-2 items-center py-4 pl-4"
+                >
+                  <IoPulseOutline />
+                  <li className="text-sm">Product</li>
+                </a>
+              </ul>
+            </div>
+          </div>
           <a
             href="/admin/transaction"
             className={`flex flex-row gap-2 items-center py-4 pl-4 rounded-l-full relative ${

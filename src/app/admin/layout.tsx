@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "../globals.css";
 import Sidebar from "@/components/layouts/(admin)/Sidebar";
+import AuthProvider from "@/Providers/AuthProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,16 +23,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <div className="flex flex-row bg-primary min-h-screen">
-          <div className="w-[15%] h-full">
-            <Sidebar />
-          </div>
-          <div className="w-[85%] py-6 pr-6">
-            <div className="bg-admin rounded-[30px] p-6 min-h-[94vh]">
-              {children}
+        <AuthProvider>
+          <div className="flex flex-row bg-primary min-h-screen">
+            <div className="w-[15%] h-full">
+              <Sidebar />
+            </div>
+            <div className="w-[85%] py-6 pr-6">
+              <div className="bg-admin rounded-[30px] p-6 min-h-[94vh]">
+                {children}
+              </div>
             </div>
           </div>
-        </div>
+        </AuthProvider>
       </body>
     </html>
   );
